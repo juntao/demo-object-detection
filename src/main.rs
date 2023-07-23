@@ -6,8 +6,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let model_data: &[u8] = include_bytes!("mobilenetv2_ssd_256_uint8.tflite");
 
     let args: Vec<String> = env::args().collect();
-    let img_path: String = args[1];
-    let output_path: String = args[2];
+    let img_path: &str = &args[1];
+    let output_path: &str = &args[2];
 
     let mut input_img = image::open(img_path)?;
     let detection_result = ObjectDetectorBuilder::new()
