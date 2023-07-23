@@ -6,4 +6,4 @@ edition = "2021"
 [dependencies]
 wasi-nn = "0.4.0"
 mediapipe-rs = { git = "https://github.com/WasmEdge/mediapipe-rs.git", branch = "main" }
-image = { version = "0.24", default-features = false, optional = true }
+image = { version = "0.24", default-features = false, features = ["gif", "jpeg", "ico", "png", "pnm", "tga", "tiff", "webp", "bmp", "hdr", "dxt", "dds", "farbfeld"] }
