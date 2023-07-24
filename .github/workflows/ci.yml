@@ -40,3 +40,10 @@ jobs:
         cargo build --target wasm32-wasi --release
         wasmedge compile target/wasm32-wasi/release/demo-object-detection.wasm demo-object-detection.wasm
         wasmedge --dir .:. demo-object-detection.wasm example.jpg output.jpg
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Output
+        path: |
+          demo-object-detection.wasm
+          output.jpg
